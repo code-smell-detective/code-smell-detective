@@ -1,0 +1,32 @@
+thresholds:
+  long_method:
+    lines_of_code: 20
+    cyclomatic_complexity: 10
+    nesting_depth: 3
+  large_class:
+    lines_of_code: 300
+    method_count: 20
+    field_count: 15
+    public_method_count: 15
+  long_parameter_list:
+    parameter_count: 4
+  duplicated_code:
+    min_duplicate_lines: 6
+    similarity_threshold: 0.85
+  complex_conditional:
+    nesting_depth: 3
+    boolean_operators: 5
+    conditional_branches: 5
+    elif_chain_length: 4
+
+exclusions:
+  paths:
+    - "**/tests/**"
+    - "**/__pycache__/**"
+    - "**/venv/**"
+
+reporting:
+  output_formats:
+    - json
+  output_directory: "./code_smell_reports"
+
