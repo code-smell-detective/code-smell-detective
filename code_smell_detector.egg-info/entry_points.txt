@@ -1,2 +1,0 @@
-[console_scripts]
-code-smell-detector = code_smell_detector.cli.main:app

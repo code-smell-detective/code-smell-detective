@@ -1,3 +1,0 @@
-code_smell_detector
-examples
-tests
