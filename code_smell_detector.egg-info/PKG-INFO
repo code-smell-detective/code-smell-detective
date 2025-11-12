@@ -1,7 +1,26 @@
+Metadata-Version: 2.4
+Name: code-smell-detector
+Version: 0.1.0
+Summary: Python application for detecting code smells in a codebase.
+Author: Code Smell Detective
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click>=8.1.7
+Requires-Dist: radon>=6.0.1
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: pathspec>=0.12.1
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: coverage>=7.4; extra == "dev"
+Requires-Dist: mypy>=1.11; extra == "dev"
+Requires-Dist: ruff>=0.6.0; extra == "dev"
+Dynamic: license-file
+
 # Code Smell Detective
 
 Code Smell Detective is a Python application that analyzes a codebase and detects code smells
-following the specification in `CODE_SMELL_FRAMEWORK.md` (which is outside of this repository). It provides static analysis, severity
+following the specification in `CODE_SMELL_FRAMEWORK.md`. It provides static analysis, severity
 assessment, SOLID principle mapping, and actionable reporting for the Phase 1 (MVP) scope.
 
 ## Features
@@ -26,18 +45,12 @@ pip install -e .
 Run the analyzer against a codebase:
 
 ```bash
-code-smell-detector analyze ./examples --config code_smell_detector/samples/code_smell_config.yaml
-
-# or analyze your own project
 code-smell-detector analyze /path/to/python/project --config code_smell_detector/samples/code_smell_config.yaml
 ```
 
 Generate only the health score:
 
 ```bash
-code-smell-detector health-score ./examples
-
-# or calculate the score for your own project
 code-smell-detector health-score /path/to/python/project
 ```
 
@@ -58,7 +71,6 @@ pytest
   - `reporting/` – report generators
   - `cli/` – command-line interface
   - `samples/` – sample configuration and code
-- `examples/` – ready-to-analyze sample codebases
 - `tests/` – unit tests
 
 ## Next Steps

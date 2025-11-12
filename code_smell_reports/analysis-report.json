@@ -1,0 +1,316 @@
+{
+  "analysis_metadata": {
+    "timestamp": "2025-11-12T13:57:50.308736+00:00",
+    "codebase_path": "/usr/local/opt/code/code-smell-detective/examples",
+    "total_files_analyzed": 1
+  },
+  "health_score": {
+    "overall": "10/100",
+    "breakdown": {
+      "complexity": "92/100",
+      "coupling": "80/100",
+      "cohesion": "75/100",
+      "duplication": "76/100",
+      "solid_compliance": "60/100"
+    }
+  },
+  "smells_summary": {
+    "total_smells": 8,
+    "by_severity": {
+      "LOW": 5,
+      "MEDIUM": 1,
+      "HIGH": 1,
+      "CRITICAL": 1
+    },
+    "by_category": {
+      "Method-Level": 3,
+      "Class-Level": 1,
+      "Duplication": 4
+    }
+  },
+  "detected_smells": [
+    {
+      "type": "Long Method",
+      "category": "Method-Level",
+      "severity": "HIGH",
+      "location": {
+        "file": "/usr/local/opt/code/code-smell-detective/examples/sample_input.py",
+        "line_start": 4,
+        "line_end": 53,
+        "class": null,
+        "method": "process_invoice"
+      },
+      "metrics": {
+        "lines_of_code": 50,
+        "cyclomatic_complexity": 16,
+        "parameter_count": 6,
+        "max_nesting_depth": 6,
+        "boolean_operator_count": 0,
+        "conditional_branch_count": 13,
+        "elif_chain_length": 3
+      },
+      "solid_violations": [
+        "SRP"
+      ],
+      "recommended_patterns": [
+        "Extract Method",
+        "Template Method",
+        "Strategy"
+      ],
+      "description": "Function 'process_invoice' is 50 LOC with cyclomatic complexity 16.",
+      "refactoring_steps": [
+        "Add characterization tests to lock current behaviour.",
+        "Extract blocks with distinct responsibilities into new methods.",
+        "Replace complex conditional branches with strategy objects if applicable."
+      ]
+    },
+    {
+      "type": "Long Parameter List",
+      "category": "Method-Level",
+      "severity": "MEDIUM",
+      "location": {
+        "file": "/usr/local/opt/code/code-smell-detective/examples/sample_input.py",
+        "line_start": 4,
+        "line_end": 53,
+        "class": null,
+        "method": "process_invoice"
+      },
+      "metrics": {
+        "lines_of_code": 50,
+        "cyclomatic_complexity": 16,
+        "parameter_count": 6,
+        "max_nesting_depth": 6,
+        "boolean_operator_count": 0,
+        "conditional_branch_count": 13,
+        "elif_chain_length": 3
+      },
+      "solid_violations": [
+        "SRP"
+      ],
+      "recommended_patterns": [
+        "Parameter Object",
+        "Builder",
+        "Facade"
+      ],
+      "description": "Function 'process_invoice' accepts 6 parameters (allowed: 4).",
+      "refactoring_steps": [
+        "Identify groups of parameters that always appear together.",
+        "Introduce parameter objects or aggregate types.",
+        "Update callers to use new abstractions."
+      ]
+    },
+    {
+      "type": "Complex Conditional",
+      "category": "Method-Level",
+      "severity": "CRITICAL",
+      "location": {
+        "file": "/usr/local/opt/code/code-smell-detective/examples/sample_input.py",
+        "line_start": 4,
+        "line_end": 53,
+        "class": null,
+        "method": "process_invoice"
+      },
+      "metrics": {
+        "lines_of_code": 50,
+        "cyclomatic_complexity": 16,
+        "parameter_count": 6,
+        "max_nesting_depth": 6,
+        "boolean_operator_count": 0,
+        "conditional_branch_count": 13,
+        "elif_chain_length": 3
+      },
+      "solid_violations": [
+        "OCP"
+      ],
+      "recommended_patterns": [
+        "Strategy",
+        "State",
+        "Chain of Responsibility",
+        "Specification"
+      ],
+      "description": "Function 'process_invoice' has nesting depth 6, 0 boolean operators, and 13 branches.",
+      "refactoring_steps": [
+        "Replace complex conditionals with polymorphism or strategy objects.",
+        "Extract guard clauses or helper predicates.",
+        "Document business rules in dedicated specification objects."
+      ]
+    },
+    {
+      "type": "Large Class",
+      "category": "Class-Level",
+      "severity": "LOW",
+      "location": {
+        "file": "/usr/local/opt/code/code-smell-detective/examples/sample_input.py",
+        "line_start": 72,
+        "line_end": 136,
+        "class": "MegaManager",
+        "method": null
+      },
+      "metrics": {
+        "lines_of_code": 65,
+        "method_count": 21,
+        "field_count": 0,
+        "public_method_count": 21
+      },
+      "solid_violations": [
+        "SRP"
+      ],
+      "recommended_patterns": [
+        "Extract Class",
+        "Facade",
+        "Mediator",
+        "Repository"
+      ],
+      "description": "Class 'MegaManager' has 65 LOC, 21 methods, and 0 fields.",
+      "refactoring_steps": [
+        "Group related responsibilities and extract classes accordingly.",
+        "Introduce facades or mediators to simplify public APIs.",
+        "Ensure public method count reflects cohesive responsibility."
+      ]
+    },
+    {
+      "type": "Duplicated Code",
+      "category": "Duplication",
+      "severity": "LOW",
+      "location": {
+        "file": "/usr/local/opt/code/code-smell-detective/examples/sample_input.py",
+        "line_start": 57,
+        "line_end": 62,
+        "class": null,
+        "method": null
+      },
+      "metrics": {
+        "duplicate_line_count": 6,
+        "occurrences": 2
+      },
+      "solid_violations": [
+        "DRY"
+      ],
+      "recommended_patterns": [
+        "Extract Method",
+        "Template Method",
+        "Strategy"
+      ],
+      "description": "Block duplicated 2 times covering lines 57-62 (minimum 6 lines).",
+      "refactoring_steps": [
+        "Identify duplicated logic and extract shared functionality.",
+        "Introduce template or strategy pattern if variations exist.",
+        "Write regression tests before refactoring."
+      ]
+    },
+    {
+      "type": "Duplicated Code",
+      "category": "Duplication",
+      "severity": "LOW",
+      "location": {
+        "file": "/usr/local/opt/code/code-smell-detective/examples/sample_input.py",
+        "line_start": 65,
+        "line_end": 70,
+        "class": null,
+        "method": null
+      },
+      "metrics": {
+        "duplicate_line_count": 6,
+        "occurrences": 2
+      },
+      "solid_violations": [
+        "DRY"
+      ],
+      "recommended_patterns": [
+        "Extract Method",
+        "Template Method",
+        "Strategy"
+      ],
+      "description": "Block duplicated 2 times covering lines 65-70 (minimum 6 lines).",
+      "refactoring_steps": [
+        "Identify duplicated logic and extract shared functionality.",
+        "Introduce template or strategy pattern if variations exist.",
+        "Write regression tests before refactoring."
+      ]
+    },
+    {
+      "type": "Duplicated Code",
+      "category": "Duplication",
+      "severity": "LOW",
+      "location": {
+        "file": "/usr/local/opt/code/code-smell-detective/examples/sample_input.py",
+        "line_start": 58,
+        "line_end": 63,
+        "class": null,
+        "method": null
+      },
+      "metrics": {
+        "duplicate_line_count": 6,
+        "occurrences": 2
+      },
+      "solid_violations": [
+        "DRY"
+      ],
+      "recommended_patterns": [
+        "Extract Method",
+        "Template Method",
+        "Strategy"
+      ],
+      "description": "Block duplicated 2 times covering lines 58-63 (minimum 6 lines).",
+      "refactoring_steps": [
+        "Identify duplicated logic and extract shared functionality.",
+        "Introduce template or strategy pattern if variations exist.",
+        "Write regression tests before refactoring."
+      ]
+    },
+    {
+      "type": "Duplicated Code",
+      "category": "Duplication",
+      "severity": "LOW",
+      "location": {
+        "file": "/usr/local/opt/code/code-smell-detective/examples/sample_input.py",
+        "line_start": 66,
+        "line_end": 71,
+        "class": null,
+        "method": null
+      },
+      "metrics": {
+        "duplicate_line_count": 6,
+        "occurrences": 2
+      },
+      "solid_violations": [
+        "DRY"
+      ],
+      "recommended_patterns": [
+        "Extract Method",
+        "Template Method",
+        "Strategy"
+      ],
+      "description": "Block duplicated 2 times covering lines 66-71 (minimum 6 lines).",
+      "refactoring_steps": [
+        "Identify duplicated logic and extract shared functionality.",
+        "Introduce template or strategy pattern if variations exist.",
+        "Write regression tests before refactoring."
+      ]
+    }
+  ],
+  "metrics_summary": {
+    "average_cyclomatic_complexity": 1.79,
+    "average_function_loc": 4.33,
+    "average_class_loc": 65.0,
+    "max_cyclomatic_complexity": 16,
+    "function_count": 24,
+    "class_count": 1
+  },
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "smell_type": "Long Method",
+      "location": "/usr/local/opt/code/code-smell-detective/examples/sample_input.py",
+      "recommendation": "Address Long Method at /usr/local/opt/code/code-smell-detective/examples/sample_input.py:4",
+      "impact": "MEDIUM"
+    },
+    {
+      "priority": "CRITICAL",
+      "smell_type": "Complex Conditional",
+      "location": "/usr/local/opt/code/code-smell-detective/examples/sample_input.py",
+      "recommendation": "Address Complex Conditional at /usr/local/opt/code/code-smell-detective/examples/sample_input.py:4",
+      "impact": "HIGH"
+    }
+  ]
+}
