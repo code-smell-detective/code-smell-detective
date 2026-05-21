@@ -5,6 +5,8 @@ Code Smell Detective is a Python application that analyzes a codebase and detect
 following the specification in `CODE_SMELL_FRAMEWORK.md` (which is outside of this repository). It provides static analysis, severity
 assessment, SOLID principle mapping, and actionable reporting for the Phase 1 (MVP) scope.
 
+Based on "Software Fundamentals Matter More Than Ever" — Matt Pocock at https://www.youtube.com/watch?v=v4F1gFy-hqg
+
 ## Features
 
 - AST-based parsing of Python source files
